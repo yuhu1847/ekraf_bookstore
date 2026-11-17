@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-nunito);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Brand palette */
+  --color-espresso: #2c221e;
+  --color-mocha: #8c6d53;
+  --color-mocha-deep: #6e5844;
+  --color-ember: #c86d51;
+  --color-clay: #b0553b;
+  --color-cream: #f9f8f6;
+  --color-sand: #f1ede6;
+  --color-linen: #fbfaf7;
+}
+
+:root {
+  --radius: 1rem;
+  --background: #f9f8f6;
+  --foreground: #2c221e;
+  --card: #ffffff;
+  --card-foreground: #2c221e;
+  --popover: #ffffff;
+  --popover-foreground: #2c221e;
+  --primary: #8c6d53;
+  --primary-foreground: #ffffff;
+  --secondary: #c86d51;
+  --secondary-foreground: #ffffff;
+  --muted: #f1ede6;
+  --muted-foreground: #63553f;
+  --accent: #f3e9e1;
+  --accent-foreground: #7a4a33;
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+  --border: #e8e2d8;
+  --input: #ddd5c8;
+  --ring: #8c6d53;
+  --chart-1: #8c6d53;
+  --chart-2: #c86d51;
+  --chart-3: #b09a83;
+  --chart-4: #6e5844;
+  --chart-5: #d9a08b;
+  --sidebar: #f9f8f6;
+  --sidebar-foreground: #2c221e;
+  --sidebar-primary: #8c6d53;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f3e9e1;
+  --sidebar-accent-foreground: #7a4a33;
+  --sidebar-border: #e8e2d8;
+  --sidebar-ring: #8c6d53;
+}
+
+.dark {
+  --background: #2c221e;
+  --foreground: #f9f8f6;
+  --card: #3a2e27;
+  --card-foreground: #f9f8f6;
+  --popover: #3a2e27;
+  --popover-foreground: #f9f8f6;
+  --primary: #d9a08b;
+  --primary-foreground: #2c221e;
+  --secondary: #8c6d53;
+  --secondary-foreground: #f9f8f6;
+  --muted: #3a2e27;
+  --muted-foreground: #b8a795;
+  --accent: #4a3a30;
+  --accent-foreground: #f9f8f6;
+  --destructive: #e5716a;
+  --destructive-foreground: #2c221e;
+  --border: #4a3a30;
+  --input: #4a3a30;
+  --ring: #d9a08b;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  ::selection {
+    background-color: #c86d51;
+    color: #ffffff;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Refined scrollbar for admin lists */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #d8cfc2;
+  border-radius: 9999px;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #c2b6a4;
+}
+
+/* palette build marker */
